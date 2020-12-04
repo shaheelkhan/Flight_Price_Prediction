@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Price Prediction</title>
+
+
+
+</head>
+
+<body>
+
+	<div class="topnav">
+		<a class="active" href="/"><b>FLIGHT PRICE PREDICTION<b></a>
+	</div>
+		
+	<br><br>
+	
+		<div class="container">
+		
+			<form action="\predict" method="post">
+			
+				<div class="grid-container">
+					<div class="left-grid">
+						<h3>Departure Date</h3>
+						<input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+					</div>
+					<div class="right-grid">
+						<h3>Arrival Date</h3>
+						<input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required="required">
+					</div>
+				</div>
+				<br>
+				<br>
+				<br>
+				
+				<div class="grid-container">
+					<div class="left-grid">
+						<h3>Source</h3>
+						<select name="Source" id="Source" required="required">
+                                <option value="Delhi">Delhi</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Chennai">Chennai</option>
+								<option value="Banglore">Banglore</option>
+                           </select>
+					</div>
+					<div class="right-grid">
+						<h3>Destination</h3>
+						<select name="Destination" id="Destination" required="required">
+                                <option value="Cochin">Cochin</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Kolkata">Kolkata</option>
+								<option value="Banglore">Banglore</option>
+                         </select>
+					</div>
+				</div>
+				<br>
+				<br>
+				<br>
+				<div class="grid-container">
+					<div class="left-grid">
+						<h3>Stopage</h3>
+						<select name="Total_Stops" id="Total_Stops" required="required">
+                                <option value="0">Non-Stop</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                         </select>
+					</div>
+					<div class="right-grid">
+						<h3>Airline</h3>
+						<select name="Airline" id="Airline" required="required">
+                                <option value="Jet Airways">Jet Airways</option>
+                                <option value="IndiGo">IndiGo</option>
+                                <option value="Air India">Air India</option>
+                                <option value="Multiple carriers">Multiple carriers</option>
+                                <option value="SpiceJet">SpiceJet</option>
+                                <option value="Vistara">Vistara</option>
+                                <option value="Air Asia">Air Asia</option>
+                                <option value="GoAir">GoAir</option>
+                                <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+                                <option value="Jet Airways Business">Jet Airways Business</option>
+                                <option value="Vistara Premium economy">Vistara Premium economy</option>
+                                <option value="Trujet">Trujet</option>
+								<option value="Air Asia">Air Asia</option>
+                        </select>
+					</div>
+				</div>
+				<br>
+				<br>
+				<br>
+				<button  id="sub" type="submit "><b>Submit</b></button>
+			</form>
+			<h2>{{ prediction_text }}</h2>
+		</div>
+					
+					
+		
+			
+	
+<style>
+	body {
+	background-color:#fffceb;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align:center;
+	padding:0px;
+	}
+	
+	.topnav {
+	overflow: hidden;
+	height: 20px;
+	background-color: navy;
+	padding: 30px
+	}
+	
+	.topnav a {
+	float: center;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 30px 20px;
+	text-decoration: none;
+	font-size: 25px;
+	}
+	
+	.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+	}
+	
+	.topnav a.active {
+	background-color: navy;
+	color: white;
+	}
+	.grid-container {
+		color:#000000;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 100px 100px 100px;
+		grid-gap: 20px;
+		padding: 20px;
+		height: 8vh;
+	}
+	.left-grid {
+		background-color:#c9c4af;
+		color:black;
+	}
+	.right-grid {
+		background-color:#c9c4af;
+		color:black;	
+	}
+	#Source {
+        width: 100px;
+        height: 20px;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+	
+	#Destination {
+        width: 125px;
+        height: 20px;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+	
+	#Total_Stops {
+        width: 100px;
+        height: 20px;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+	
+	#Airline {
+        width: 160px;
+        height: 20px;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+	
+	#sub {
+		background-color: #afca0a;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        border-radius: 14px;
+        font-size: 18px;
+    }
+        
+    #sub:hover {
+        background-color: #b6dd72;
+</style>
+</body>
